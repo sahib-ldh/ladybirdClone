@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ladybird Browser</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            background: -webkit-linear-gradient(#0b000f, #000000);
+            line-height: 1.6;
+        }
+
+        /* Navigation Styling */
+        header nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        header .nav-links {
+            list-style-type: none;
+        }
+
+        header .nav-links li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        header .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        header .donate-button {
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #A64AC9, #4A90E2);
+            border-radius: 20px;
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+            position: relative;
+        }
+
+        .hero-text {
+            flex: 1;
+            margin-bottom: 160px;
+            padding-left: 180px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .gradtext {
+            background: -webkit-linear-gradient(#A64Ac9, #4A90E2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .ts-image {
+            height: 500px;
+            z-index: -1;
+            position: fixed;
+        }
+
+        .hero p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .hero .cta-button {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #A64AC9, #4A90E2);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: right;
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            max-width: 120%;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-image {
+                text-align: center;
+            }
+
+            .hero-image img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 10%;
+            background-color: #000000;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .about-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .about-image img {
+            max-width: 90%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-text {
+            flex: 1;
+            padding-left: 50px;
+        }
+
+        .about-text h2 {
+            font-size: 46px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-text {
+                padding-left: 0;
+                margin-top: 20px;
+            }
+
+            .about-text h2 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 16px;
+            }
+
+            .about-image img {
+                max-width: 100%;
+            }
+        }
+
+        /* Feature Section Styling */
+        .feature-section {
+            padding: 100px 10%;
+            background-color: #0e0f2e;
+        }
+
+        .feature-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-box {
+            background: #181a2b;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-box p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        /* Icon colors */
+        .icon-independent {
+            color: #b79ef0;
+        }
+
+        .icon-focus {
+            color: #9172f1;
+        }
+
+        .icon-monetization {
+            color: #8aa5da;
+        }
+
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .feature-box {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div><img class="logo" src="logo.webp" alt="logo"></div>
+            <ul class="nav-links">
+                <li><a href="#">About</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Get Involved</a></li>
+                <li><a href="#">Sponsors</a></li>
+                <li><a href="#" class="donate-button">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-text">
+            <img src="ts.png" class="ts-image">
+            <h1>Welcome to <span class="gradtext">Ladybird</span>,<br>a truly independent web browser.</h1>
+            <p>We are building a brand-new browser from scratch, backed by a non-profit.</p>
+            <a href="#" class="cta-button">Get Involved</a>
+        </div>
+        <div class="hero-image">
+            <img src="lb-hero-gradient.webp" alt="Browser Mockup">
+        </div>
+    </section>
+    
+    <section class="about-section">
+        <div class="about-content">
+            <div class="about-image">
+                <img src="laptop.webp" alt="Laptop Mockup">
+            </div>
+            <div class="about-text">
+                <h2>About <span class="gradtext">Ladybird</span></h2>
+                <p>Ladybird is a brand-new browser & web engine. Driven by a web standards first approach, Ladybird aims to render the modern web with good performance, stability, and security.</p>
+                <p>From its humble beginnings as an HTML viewer for the SerenityOS hobby operating system project, Ladybird has since grown into a cross-platform browser supporting Linux, macOS, and other Unix-like systems.</p>
+                <p>Ladybird is currently in heavy development. We are targeting a first Alpha release for early adopters in 2026.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="feature-section">
+        <h2>What makes <span class="gradtext">Ladybird</span> unique</h2>
+        <div class="features">
+            <div class="feature-box">
+                <div class="icon icon-independent">⭐</div>
+                <h3>Truly independent</h3>
+                <p>No code from other browsers. We're building a new engine based on web standards.</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon icon-focus">🎯</div>
+                <h3>Singular focus</h3>
+                <p>We are focused on one thing: the web browser.</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon icon-monetization">💵</div>
+                <h3>No monetization</h3>
+                <p>No "default search deals", crypto tokens, or other forms of user monetization, ever.</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
