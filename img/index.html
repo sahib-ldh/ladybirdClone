@@ -11,7 +11,9 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        html {
+            scroll-behavior: smooth;
+            }
         .logo {
             height: 40px;
             width: auto;
@@ -91,6 +93,12 @@
             z-index: -1;
             position: fixed;
         }
+        .ts-image2 {
+            height: 500px;
+            z-index: 1;
+            position: fixed;
+        }
+
 
         .hero p {
             font-size: 16px;
@@ -209,13 +217,17 @@
 
         /* Feature Section Styling */
         .feature-section {
-            padding: 100px 10%;
-            background-color: #0e0f2e;
+           
+            padding: 100px 15%;
+            background: rgb(14,13,21);
+            background: radial-gradient(circle, rgba(14,13,21,1) 0%, rgba(0,0,0,1) 100%);
+
+     
         }
 
         .feature-section h2 {
-            text-align: center;
-            font-size: 36px;
+            text-align: left;
+            font-size: 56px;
             margin-bottom: 40px;
         }
 
@@ -235,13 +247,17 @@
         }
 
         .feature-box h3 {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             margin-bottom: 10px;
+
         }
 
         .feature-box p {
-            font-size: 1rem;
-            line-height: 1.6;
+            font-size: 1.2rem;
+            line-height: 3;
+            color: rgb(232, 230, 227);
+            line-height: 150%;
+            font-weight: 400;
         }
 
         .icon {
@@ -280,8 +296,8 @@
         <nav>
             <div><img class="logo" src="logo.webp" alt="logo"></div>
             <ul class="nav-links">
-                <li><a href="#">About</a></li>
-                <li><a href="#">News</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#news">News</a></li>
                 <li><a href="#">Get Involved</a></li>
                 <li><a href="#">Sponsors</a></li>
                 <li><a href="#" class="donate-button">Donate</a></li>
@@ -289,9 +305,9 @@
         </nav>
     </header>
     
-    <section class="hero">
+    <section  class="hero">
         <div class="hero-text">
-            <img src="ts.png" class="ts-image">
+            <img src="ts.png" class="ts-image"> 
             <h1>Welcome to <span class="gradtext">Ladybird</span>,<br>a truly independent web browser.</h1>
             <p>We are building a brand-new browser from scratch, backed by a non-profit.</p>
             <a href="#" class="cta-button">Get Involved</a>
@@ -301,7 +317,7 @@
         </div>
     </section>
     
-    <section class="about-section">
+    <section  id="about"  class="about-section">
         <div class="about-content">
             <div class="about-image">
                 <img src="laptop.webp" alt="Laptop Mockup">
@@ -315,23 +331,24 @@
         </div>
     </section>
     
-    <section class="feature-section">
+    <section id="news" class="feature-section">
+        <img src="\ts.png" class="ts-image2">
         <h2>What makes <span class="gradtext">Ladybird</span> unique</h2>
         <div class="features">
             <div class="feature-box">
                 <div class="icon icon-independent">⭐</div>
                 <h3>Truly independent</h3>
-                <p>No code from other browsers. We're building a new engine based on web standards.</p>
+                <p>No code from other browsers.<br> We're building a new engine <br> based on web standards.</p>
             </div>
             <div class="feature-box">
                 <div class="icon icon-focus">🎯</div>
                 <h3>Singular focus</h3>
-                <p>We are focused on one thing: the web browser.</p>
+                <p>We are focused on one thing: <br> the web browser.</p>
             </div>
             <div class="feature-box">
                 <div class="icon icon-monetization">💵</div>
                 <h3>No monetization</h3>
-                <p>No "default search deals", crypto tokens, or other forms of user monetization, ever.</p>
+                <p>No "default search deals",<br> crypto tokens, or other forms <br> of user monetization, ever.</p>
             </div>
         </div>
     </section>
